@@ -1,0 +1,10 @@
+FROM tomcat:9.0
+
+# Remove default Tomcat apps
+RUN rm -rf /usr/local/tomcat/webapps/*
+
+# Copy your .war file
+COPY target/furniture-viewer.war /usr/local/tomcat/webapps/ROOT.war
+
+# Expose port
+EXPOSE 8080
